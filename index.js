@@ -12,9 +12,9 @@ app.use(cors({
 }));
 app.use(express.json());
 const path = require('path');
-app.post('/fetch-and-store', async (req, res) => {
+app.get('/fetch-and-store', async (req, res) => {
     try {
-        const searchTerm = req.body.inputValue; // assuming you get this from the POST request body
+        const searchTerm = "baju"; // assuming you get this from the POST request body
         const graphqlQuery = {
             "operationName": "SearchProductQueryV4",
             "variables": {
