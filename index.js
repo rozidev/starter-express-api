@@ -4,7 +4,12 @@ const axios = require('axios'); // Menambahkan axios untuk membuat permintaan HT
 const app = express();
 const cors = require('cors');  // Import the cors module
 const port = 5000;
-app.use(cors());
+app.use(cors({
+    origin: '*'
+}));
+app.use(cors({
+    methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
+}));
 app.use(express.json());
 const path = require('path');
 app.post('/fetch-and-store', async (req, res) => {
